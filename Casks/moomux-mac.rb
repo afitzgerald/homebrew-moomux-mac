@@ -8,6 +8,7 @@ cask "moomux-mac" do
   homepage "https://github.com/afitzgerald/moomux-mac"
 
   depends_on macos: :sonoma
+  depends_on formula: "erickgnclvs/moomux/moomux"
 
   app "Moomux.app"
 
