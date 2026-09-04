@@ -7,7 +7,7 @@ cask "moomux-mac" do
   desc "Native macOS front end for moomux"
   homepage "https://github.com/afitzgerald/moomux-mac"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Moomux.app"
 
