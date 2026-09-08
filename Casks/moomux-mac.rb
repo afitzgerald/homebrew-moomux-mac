@@ -1,8 +1,8 @@
 cask "moomux-mac" do
-  version "0.0.39"
-  sha256 "b518064daee119f675cb2ca9a3ef21fc29fce51cdf38d4e49b6f93b15cfbaee3"
+  version "0.0.40"
+  sha256 "16546227f14cf7c17a0a036fc217b67a82b19a2984f811802158a282afcbb727"
 
-  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.39/Moomux-v0.0.39.dmg"
+  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.40/Moomux-v0.0.40.dmg"
   name "Moomux"
   desc "Native macOS front end for moomux"
   homepage "https://github.com/afitzgerald/moomux-mac"
