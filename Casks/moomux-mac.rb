@@ -1,8 +1,8 @@
 cask "moomux-mac" do
-  version "0.0.148"
-  sha256 "7efcfe061878e0ced8144d5859cf4a60a4c4c813b95ef3163f668dbf2ef621cb"
+  version "0.0.149"
+  sha256 "e160f5b11b5b2575ad9c3f98db79825b44b983a4ea5b06361b26b6e39f416fc5"
 
-  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.148/Moomux-v0.0.148.dmg"
+  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.149/Moomux-v0.0.149.dmg"
   name "Moomux"
   desc "Native macOS front end for moomux"
   homepage "https://github.com/afitzgerald/moomux-mac"
@@ -30,6 +30,14 @@ cask "moomux-mac" do
     run "/usr/bin/xattr",
         args: ["-dr", "com.apple.quarantine", "{{appdir}}/Moomux.app"]
   end
+
+  # On , brew quits a running app named here and reopens
+  # the new build afterwards (after postflight, so the xattr is gone
+  # by then). The directive is read from the *installed* cask, so the
+  # first upgrade onto this stanza still leaves the old app running.
+  # brew skips the quit when it is itself running inside the app (a
+  # Moomux pane), since quitting would kill it.
+  uninstall quit: "app.moomux.Moomux"
 
   zap trash: [
     "~/Library/Application Support/Moomux",
