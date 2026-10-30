@@ -1,8 +1,8 @@
 cask "moomux-mac" do
-  version "0.0.153"
-  sha256 "c07198168283a57ffb5169979361e332a9a0f9919ff2f86f7fb1f06a99656d6c"
+  version "0.0.154"
+  sha256 "b3d2ff603def358095497d59162199714e7df08c629cc6a15cc8b0e29fad0f34"
 
-  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.153/Moomux-v0.0.153.dmg"
+  url "https://github.com/afitzgerald/moomux-mac/releases/download/v0.0.154/Moomux-v0.0.154.dmg"
   name "Moomux"
   desc "Native macOS front end for moomux"
   homepage "https://github.com/afitzgerald/moomux-mac"
@@ -31,7 +31,26 @@ cask "moomux-mac" do
         args: ["-dr", "com.apple.quarantine", "{{appdir}}/Moomux.app"]
   end
 
-  # On , brew quits a running app named here and reopens
+  # On [32m==>[0m [1mWould upgrade 1 outdated package[0m
+rustup 1.29.0 -> 1.29.1_1 (4.8MB)
+[32m==>[0m [1mUpgrading [32mrustup[39m[0m
+  1.29.0 -> 1.29.1_1 
+[34m==>[0m [1mPouring rustup--1.29.1_1.arm64_tahoe.bottle.tar.gz[0m
+🍺  /opt/homebrew/Cellar/rustup/1.29.1_1: 44 files, 11.7MB
+[32m==>[0m [1mCaveats[0m
+Bash completion has been installed to:
+  /opt/homebrew/opt/rustup/etc/bash_completion.d
+[34m==>[0m [1mrustup[0m
+To use rustup, ensure you have "$(brew --prefix rustup)/bin" in your $PATH:
+  https://rust-lang.github.io/rustup/installation/already-installed-rust.html
+
+This formula no longer provides `rustup-init`.
+
+rustup is keg-only, which means it was not symlinked into /opt/homebrew,
+because it conflicts with rust.
+
+If you need to have rustup first in your PATH, run:
+  printf '%s\n' export\ PATH\=/opt/homebrew/opt/rustup/bin:\$PATH >> /Users/runner/.bash_profile, brew quits a running app named here and reopens
   # the new build afterwards (after postflight, so the xattr is gone
   # by then). The directive is read from the *installed* cask, so the
   # first upgrade onto this stanza still leaves the old app running.
